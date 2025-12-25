@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Merry Christmas 2025 ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            height: 100vh; 
+            overflow: hidden; 
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #2d1b69 100%);
+            touch-action: manipulation;
+        }
+        
+        .navbar { 
+            position: fixed; top: 15px; left: 50%; transform: translateX(-50%); z-index: 1000; 
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(25px); padding: 10px 15px; 
+            border-radius: 40px; border: 1px solid rgba(255,255,255,0.25); display: flex; gap: 8px; 
+            flex-wrap: wrap; min-height: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .nav-btn { 
+            color: rgba(255,255,255,0.95); background: none; border: none; padding: 12px 20px; 
+            border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.3s ease; 
+            min-height: 44px; min-width: 70px; display: flex; align-items: center; justify-content: center;
+        }
+        .nav-btn.active, .nav-btn:hover, .nav-btn:active { 
+            color: white; background: linear-gradient(135deg, #ff6b6b, #c44569); 
+            box-shadow: 0 8px 25px rgba(255,107,107,0.5); transform: translateY(-2px); 
+        }
+        
+        .pages-container { position: relative; height: 100vh; width: 100%; }
+        .page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; transition: opacity 0.6s ease; }
+        .page.active { opacity: 1; visibility: visible; }
+        
+        .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(2px 2px at 20px 30px, #fff, transparent), radial-gradient(1.5px 1.5px at 80px 80px, #ffd700, transparent); background-repeat: repeat; background-size: 200px 150px; animation: twinkle 20s linear infinite; }
+        @keyframes twinkle { 0%,100%{opacity:0.7} 50%{opacity:1} }
+        .snow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+        .snowflake { position: absolute; width: 5px; height: 5px; background: #e8f4fd; border-radius: 50%; box-shadow: 0 0 6px #e8f4fd; animation: snowfall linear infinite; }
+        @keyframes snowfall { 0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+        
+        /* PAGE 1: ULTRA-REALISTIC SANTA */
+        .page-1 { background: radial-gradient(ellipse at 30% 20%, #1a1a3a 0%, #0a0a1a 70%); }
+        .santa-container { position: absolute; top: clamp(15%, 20%, 25%); left: 0; width: 100%; height: clamp(140px, 20vh, 200px); animation: santaFlight 18s linear infinite; }
+        @keyframes santaFlight { 0% { transform: translateX(-25vw) scale(0.85); } 45% { transform: translateX(25vw) scale(1.05); } 100% { transform: translateX(calc(100vw + 25vw)) scale(0.85); } }
+        .sleigh-group { display: flex; align-items: flex-end; height: 100%; padding: 0 6vw; gap: 4px; }
+        .reindeer { width: clamp(32px, 5.5vw, 45px); height: clamp(48px, 8vw, 65px); margin: 0 2px; position: relative; animation: realisticGallop 2.2s ease-in-out infinite; }
+        .reindeer::before { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: clamp(24px, 4vw, 32px); height: clamp(20px, 3.5vw, 28px); background: linear-gradient(145deg, #8b4513, #a0522d); border-radius: 60% 60% 40% 40%; box-shadow: inset -4px -2px 8px rgba(0,0,0,0.4); }
+        .reindeer::after { content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); width: clamp(20px, 3.5vw, 28px); height: clamp(22px, 3.8vw, 30px); background: linear-gradient(145deg, #d2691e, #cd853f); border-radius: 55% 55% 45% 45%; box-shadow: inset 2px 2px 4px rgba(255,255,255,0.3); }
+        .reindeer:nth-child(6)::after { background: linear-gradient(145deg, #ff4757, #ff6b81); box-shadow: inset 2px 2px 4px rgba(255,255,255,0.3), 0 0 25px #ff4757; animation: rudolphGlow 1.2s ease-in-out infinite alternate; }
+        @keyframes realisticGallop { 0%,25%,75%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-6px) rotate(2deg)} }
+        @keyframes rudolphGlow { 0%{box-shadow:inset 2px 2px 4px rgba(255,255,255,0.3), 0 0 15px #ff4757} 100%{box-shadow:inset 2px 2px 4px rgba(255,255,255,0.3), 0 0 30px #ff4757} }
+        .sleigh { position: relative; width: clamp(180px, 32vw, 260px); height: clamp(70px, 12vw, 95px); margin-left: clamp(15px, 2.5vw, 22px); animation: sleighBounce 2.8s ease-in-out infinite; }
+        .sleigh::before { content: ''; position: absolute; inset: clamp(8px, 1.5vw, 12px) clamp(10px, 1.8vw, 15px) clamp(10px, 1.8vw, 15px) clamp(10px, 1.8vw, 15px); background: linear-gradient(145deg, #c41e3a, #a61e2f); border-radius: 25px 8px 25px 25px; box-shadow: inset 0 4px 12px rgba(255,255,255,0.2), 0 15px 45px rgba(196,30,58,0.6); }
+        @keyframes sleighBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+        .santa { position: absolute; top: clamp(-65px, -11vw, -90px); left: clamp(55px, 10vw, 75px); width: clamp(55px, 9vw, 75px); height: clamp(80px, 13vw, 110px); animation: santaBreathe 4s ease-in-out infinite; }
+        .santa-hat { position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-5deg); width: 0; height: 0; border-left: clamp(16px, 2.5vw, 22px) solid transparent; border-right: clamp(16px, 2.5vw, 22px) solid transparent; border-bottom: clamp(32px, 5vw, 45px) solid #ff4757; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%; box-shadow: inset -3px -2px 8px rgba(0,0,0,0.3); }
+        .santa-hat::before { content: ''; position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); width: clamp(20px, 3.2vw, 28px); height: clamp(20px, 3.2vw, 28px); background: #fff; border-radius: 50%; box-shadow: inset 0 2px 4px rgba(255,255,255,0.8); }
+        .santa-face { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: clamp(36px, 6vw, 50px); height: clamp(32px, 5.2vw, 44px); background: linear-gradient(145deg, #f4c7ab, #e8b8a0); border-radius: 50%; box-shadow: inset 3px 3px 8px rgba(255,255,255,0.6), 0 4px 12px rgba(0,0,0,0.3); }
+        .santa-face::before { content: ''; position: absolute; top: 8px; left: 8px; width: 6px; height: 6px; background: #3c2f2f; border-radius: 50%; box-shadow: 22px 0 0 #3c2f2f; animation: santaBlink 4s infinite; }
+        @keyframes santaBlink { 0%,90%{height:6px;top:8px} 95%{height:1px;top:11px} 100%{height:6px;top:8px} }
+        .santa-beard { position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: clamp(44px, 7.5vw, 62px); height: clamp(36px, 6vw, 50px); background: radial-gradient(ellipse at 50% 20%, #fff 0%, #f8f8f8 70%, #e8e8e8 100%); border-radius: 60% 60% 40% 40%; box-shadow: inset 0 3px 8px rgba(255,255,255,0.9); }
+        .santa-coat { position: absolute; top: 25px; left: 50%; transform: translateX(-50%); width: clamp(48px, 8vw, 65px); height: clamp(55px, 9vw, 75px); background: linear-gradient(145deg, #c62828, #ad232f); border-radius: 50% 50% 60% 60%; box-shadow: inset 4px 4px 12px rgba(255,255,255,0.3), 0 8px 25px rgba(198,40,40,0.6); }
+        @keyframes santaBreathe { 0%,100%{transform:translateX(-50%) scaleY(1)} 50%{transform:translateX(-50%) scaleY(1.03)} }
+        .page1-text { position: absolute; top: clamp(60%, 65%, 70%); left: 50%; transform: translateX(-50%); text-align: center; color: white; z-index: 20; padding: 0 5vw; }
+        .page1-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 10vw, 6rem); background: linear-gradient(45deg, #fff, #ffd700); -webkit-background-clip: text; background-clip: text; margin-bottom: clamp(10px, 2vw, 20px); animation: glow 3s ease-in-out infinite alternate; }
+        .page1-text p { font-size: clamp(1rem, 4vw, 1.6rem); opacity: 0.95; font-weight: 300; line-height: 1.4; }
+        @keyframes glow { 0%{filter:drop-shadow(0 0 20px #ffd700)} 100%{filter:drop-shadow(0 0 40px #ffd700)} }
+        
+        /* Santa Animation - Only for Page 1 */
+        #animation {
+            display: inline-block;
+            position: fixed;
+            text-align: center;
+            z-index: 100;
+            animation: roamAround 25s linear infinite;
+        }
+
+        #frame {
+            width: 652.5px;
+            height: 312.5px;
+            border: 1px solid transparent;
+            background: url('santaanime.png') no-repeat;
+            background-size: 3915px 1250px;
+            animation: frame-animation 1.2s steps(1) infinite;
+        }
+
+        @keyframes roamAround {
+            0% {
+                left: -700px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            100% {
+                left: calc(100% + 700px);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @-webkit-keyframes frame-animation {
+            0% { background-position: 0 0; }
+            4.17% { background-position: -652.5px 0; }
+            8.33% { background-position: -1305px 0; }
+            12.5% { background-position: -1957.5px 0; }
+            16.67% { background-position: -2610px 0; }
+            20.83% { background-position: -3262.5px 0; }
+            25% { background-position: 0 -312.5px; }
+            29.17% { background-position: -652.5px -312.5px; }
+            33.33% { background-position: -1305px -312.5px; }
+            37.5% { background-position: -1957.5px -312.5px; }
+            41.67% { background-position: -2610px -312.5px; }
+            45.83% { background-position: -3262.5px -312.5px; }
+            50% { background-position: 0 -625px; }
+            54.17% { background-position: -652.5px -625px; }
+            58.33% { background-position: -1305px -625px; }
+            62.5% { background-position: -1957.5px -625px; }
+            66.67% { background-position: -2610px -625px; }
+            70.83% { background-position: -3262.5px -625px; }
+            75% { background-position: 0 -937.5px; }
+            79.17% { background-position: -652.5px -937.5px; }
+            83.33% { background-position: -1305px -937.5px; }
+            87.5% { background-position: -1957.5px -937.5px; }
+            91.67% { background-position: -2610px -937.5px; }
+            95.83% { background-position: -3262.5px -937.5px; }
+            100% { background-position: 0 0; }
+        }
+
+        @keyframes frame-animation {
+            0% { background-position: 0px 0px; }
+            4.17% { background-position: -652.5px 0px; }
+            8.33% { background-position: -1305px 0px; }
+            12.5% { background-position: -1957.5px 0px; }
+            16.67% { background-position: -2610px 0px; }
+            20.83% { background-position: -3262.5px 0px; }
+            25% { background-position: 0px -312.5px; }
+            29.17% { background-position: -652.5px -312.5px; }
+            33.33% { background-position: -1305px -312.5px; }
+            37.5% { background-position: -1957.5px -312.5px; }
+            41.67% { background-position: -2610px -312.5px; }
+            45.83% { background-position: -3262.5px -312.5px; }
+            50% { background-position: 0px -625px; }
+            54.17% { background-position: -652.5px -625px; }
+            58.33% { background-position: -1305px -625px; }
+            62.5% { background-position: -1957.5px -625px; }
+            66.67% { background-position: -2610px -625px; }
+            70.83% { background-position: -3262.5px -625px; }
+            75% { background-position: 0px -937.5px; }
+            79.17% { background-position: -652.5px -937.5px; }
+            83.33% { background-position: -1305px -937.5px; }
+            87.5% { background-position: -1957.5px -937.5px; }
+            91.67% { background-position: -2610px -937.5px; }
+            95.83% { background-position: -3262.5px -937.5px; }
+            100% { background-position: 0px 0px; }
+        }
+
+        /* PAGE 2: Wishes */
+        .page-2 { background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.12) 0%, transparent 50%); }
+        .wish-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(90%, 85%, 95%); max-width: 700px; text-align: center; }
+        .wish-card { padding: clamp(30px, 8vw, 60px) clamp(25px, 5vw, 40px); background: rgba(255,248,240,0.97); border-radius: 30px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); border: 2px solid rgba(255,255,255,0.4); margin-bottom: 20px; }
+        .wish-card h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 9vw, 5rem); color: #8b4513; margin-bottom: clamp(15px, 3vw, 25px); }
+        .current-wish { color: #5d4037; font-size: clamp(1.1rem, 3.5vw, 1.4rem); line-height: 1.6; font-weight: 300; min-height: 200px; }
+        .wish-bar { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); backdrop-filter: blur(25px); padding: 15px 20px; border-radius: 35px; max-width: 90vw; box-shadow: 0 20px 60px rgba(0,0,0,0.4); border: 2px solid rgba(255,255,255,0.6); opacity: 0; visibility: hidden; transition: all 0.4s ease; }
+        .wish-bar.show { opacity: 1; visibility: visible; }
+        .wish-tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+        .wish-tab { background: linear-gradient(135deg, #ff6b6b, #c44569); color: white; border: none; padding: 10px 16px; border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: 500; transition: all 0.3s ease; min-height: 40px; min-width: 65px; }
+        .wish-tab.active { background: linear-gradient(135deg, #ffd700, #f9a825); transform: scale(1.05); }
+        
+        /* PAGE 4: Game */
+        .page-4 { background: radial-gradient(ellipse at 50% 20%, #2c3e50 0%, #1a252f 70%); }
+        .game-container { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; max-width: 90vw; color: white; padding: 0 5vw; }
+        .game-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 9vw, 5.5rem); color: #ffd700; margin-bottom: 20px; }
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(75px, 1fr)); gap: clamp(12px, 3vw, 20px); max-width: 95vw; margin: 25px auto; }
+        .gift-box { width: 100%; height: clamp(70px, 16vw, 95px); background: linear-gradient(145deg, #e74c3c, #c0392b); border-radius: 15px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(231,76,60,0.4); touch-action: manipulation; min-height: 60px; }
+        .gift-box:hover, .gift-box:active { transform: translateY(-6px) scale(1.03); }
+        .gift-box.found { background: linear-gradient(145deg, #f39c12, #e67e22); transform: scale(0.92); }
+        .gift-box.golden { background: linear-gradient(145deg, #f1c40f, #f39c12); box-shadow: 0 0 30px #f1c40f; animation: goldGlow 1s ease-in-out infinite alternate; }
+        @keyframes goldGlow { 0%{box-shadow:0 0 20px #f1c40f} 100%{box-shadow:0 0 40px #f1c40f} }
+        .score { font-size: clamp(1.4rem, 4vw, 1.8rem); color: #ffd700; margin: 20px 0; font-weight: 600; }
+        .reset-btn { background: linear-gradient(135deg, #ff6b6b, #c44569); color: white; border: none; padding: clamp(12px, 3.5vw, 18px) 35px; border-radius: 30px; font-size: clamp(1rem, 3vw, 1.2rem); cursor: pointer; margin-top: 25px; box-shadow: 0 10px 30px rgba(255,107,107,0.5); min-height: 50px; touch-action: manipulation; }
+        #message { font-size: clamp(1rem, 3.2vw, 1.3rem); margin: 20px 0; line-height: 1.4; }
+        
+        /* WINNER OVERLAY */
+        .winner-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.5s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px; }
+        .winner-overlay.show { opacity: 1; visibility: visible; }
+        .trophy { font-size: clamp(8rem, 25vw, 12rem); animation: bounce 1s infinite; margin-bottom: 20px; }
+        .winner-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 10vw, 5rem); color: #ffd700; margin-bottom: 15px; animation: glow 2s infinite alternate; }
+        .winner-message { font-size: clamp(1.2rem, 4vw, 1.8rem); max-width: 90%; line-height: 1.4; }
+        @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-30px)} 60%{transform:translateY(-15px)} }
+        
+        /* Credits - Shows on every page */
+        .credits {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            z-index: 1500;
+        }
+
+        .img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .cre {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @media (max-width: 480px) {
+            .navbar { padding: 8px 12px; gap: 6px; }
+            .nav-btn { font-size: 13px; padding: 10px 16px; }
+            .game-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        }
+        @media (max-width: 360px) {
+            .game-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="nav-btn active" data-page="1">🎅 Santa</button>
+        <button class="nav-btn" data-page="2">💌 Wishes</button>
+        <button class="nav-btn" data-page="4">🎁 Game</button>
+    </nav>
+
+    <div class="pages-container">
+        <!-- PAGE 1: REALISTIC SANTA -->
+        <div class="page page-1 active" data-page="1">
+            <div class="stars"></div>
+            <div class="snow" id="snow1"></div>
+            
+            <!-- Santa Animation - Only on Page 1 -->
+            <div id="animation">
+                <div id="frame"></div>
+            </div>
+            <div class="page1-text">
+                <h1>Merry Christmas!</h1>
+                <p>✨ To All My Dear Friends & Family 🎄</p>
+            </div>
+        </div>
+
+        <!-- PAGE 2: Wishes -->
+        <div class="page page-2" data-page="2">
+            <div class="stars"></div>
+            <div class="snow" id="snow2"></div>
+            <div class="wish-container">
+                <div class="wish-card">
+                    <h1>✨ Choose Your Wish ✨</h1>
+                    <div class="current-wish" id="currentWish">Click wish buttons below for personalized Christmas messages! 🎄</div>
+                </div>
+                <div class="wish-bar" id="wishBar">
+                    <div class="wish-tabs" id="wishTabs">
+                        <button class="wish-tab active" data-wish="1">Family</button>
+                        <button class="wish-tab" data-wish="2">Friends</button>
+                        <button class="wish-tab" data-wish="3">Teacher</button>
+                        <button class="wish-tab" data-wish="4">Love</button>
+                        <button class="wish-tab" data-wish="5">Coach</button>
+                        <!-- <button class="wish-tab" data-wish="6">Peace</button>
+                        <button class="wish-tab" data-wish="7">Joy</button>
+                        <button class="wish-tab" data-wish="8">Magic</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 4: Game -->
+        <div class="page page-4" data-page="4">
+            <div class="stars"></div>
+            <div class="snow" id="snow4"></div>
+            <div class="game-container">
+                <h1 class="game-title">🎁 Find Golden Gifts</h1>
+                <div class="score">Found: <span id="score">0</span>/5</div>
+                <div id="message">👆 Tap red boxes to find 5 hidden golden gifts! 🎄</div>
+                <div class="game-grid" id="gameGrid"></div>
+                <button class="reset-btn" onclick="resetGame()">🔄 Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WINNER OVERLAY -->
+    <div class="winner-overlay" id="winnerOverlay">
+        <div class="trophy">🏆</div>
+        <div class="winner-title">🎉 PERFECT WINNER! 🎉</div>
+        <div class="winner-message">You found ALL 5 golden gifts! Merry Christmas Champion! ✨🎅🎄</div>
+        <button class="reset-btn" onclick="closeWinner()">🎮 Play Again</button>
+    </div>
+
+    <!-- Credits - Shows on every page -->
+    <span class="credits">
+        <p style="color: white">Created By-</p>
+        <img src="download.png" alt="insta :" class="img">
+        <a href="https://www.instagram.com/yours._.aditya.a?igsh=MTdiNG41MHBvOXYzMw==" class="cre"><b>Aditya Raj - Primary Programmer</b></a><br>
+        <img src="download.png" alt="insta :" class="img">
+        <a href="https://www.instagram.com/heyy_ayush15?igsh=OGZ2d3RlZGx2b3Ri" class="cre"><b>Ayush Kumar - Secondary Programmer</b></a>
+    </span>
+
+    <script>
+        const wishes = {
+            1: "🌟 <strong>To my beautiful family</strong> - May your home overflow with love, laughter, and the magical warmth of Christmas this holiday season! May every moment together create cherished memories that last a lifetime, and may 2026 bring you perfect health, endless joy, and countless blessings. You're my greatest treasure! 🎄✨❤️",
+            2: "💕 <strong>To my amazing friends</strong> - Thank you for all the incredible memories and unstoppable adventures! Wishing you massive joy, spectacular success, and endless new horizons in 2026. Here's to more laughter, dreams coming true, and celebrating every victory together! 🥂✨🎉",
+            3: "📚 <strong>To my respected teacher</strong> - Thank you for your patience, wisdom, and guidance that went far beyond textbooks 📖💡. You didn’t just teach subjects; you shaped minds, discipline, and character 🌱. Wishing you great health, continued success, and the joy of seeing every student you’ve guided rise higher in 2026 and beyond 🌟🙏. Forever grateful for your impact and legacy.",
+            4: "💝 <strong>To my Love</strong> - Thank you for being my calm in chaos and my strength on hard days 🤍🌙. Every laugh, every late talk, and every shared dream makes life brighter with you 🌟. Wishing us endless love, growth, and memories that only get deeper with time 🫶💫. Here’s to choosing each other, every day, and building a future we’re proud of 🥂❤️.",
+            5: "🚀 <strong>To My Incredible Coach</strong> - Thank you for the discipline, motivation, and belief you drilled into us, even when we doubted ourselves 💯🧠. You taught resilience, focus, and how to push past limits under pressure 🚀. Wishing you strength, big wins, and proud moments in 2026 🎯🥇. Here’s to more goals achieved, records broken, and victories earned the hard way 🏅🔥.",
+            
+        };
+
+        let gameScore = 0;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const wishBar = document.getElementById('wishBar');
+
+            // Navigation
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageNum = this.dataset.page;
+                    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    document.querySelectorAll('.page').forEach((page, i) => {
+                        page.classList.toggle('active', (i + 1) == pageNum || pageNum == 4 && i == 2);
+                    });
+                    if(pageNum == 2) {
+                        wishBar.classList.add('show');
+                    } else {
+                        wishBar.classList.remove('show');
+                    }
+                });
+            });
+
+            // Wish tabs - auto-hide after selection
+            document.querySelectorAll('.wish-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.wish-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    const wishId = this.dataset.wish;
+                    document.getElementById('currentWish').innerHTML = wishes[wishId];
+                    setTimeout(() => wishBar.classList.remove('show'), 500);
+                });
+            });
+            wishBar.classList.add('show');
+
+            // Snow
+            ['snow1','snow2','snow4'].forEach(id => {
+                const container = document.getElementById(id);
+                for(let i = 0; i < 60; i++) {
+                    const flake = document.createElement('div');
+                    flake.className = 'snowflake';
+                    flake.style.left = Math.random() * 100 + '%';
+                    flake.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                    flake.style.animationDelay = Math.random() * 2 + 's';
+                    container.appendChild(flake);
+                }
+            });
+
+            // Game
+            initGame();
+        });
+
+        function initGame() {
+            gameScore = 0;
+            const grid = document.getElementById('gameGrid');
+            const gifts = [2,7,12,16,21];
+            grid.innerHTML = '';
+            document.getElementById('score').textContent = '0';
+            document.getElementById('message').innerHTML = '👆 Tap red boxes to find 5 hidden golden gifts! 🎄';
+            
+            for(let i = 0; i < 25; i++) {
+                const box = document.createElement('div');
+                box.className = 'gift-box';
+                box.dataset.index = i;
+                box.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if(box.classList.contains('found')) return;
+                    box.classList.add('found');
+                    if(gifts.includes(parseInt(this.dataset.index))) {
+                        box.classList.add('golden');
+                        gameScore++;
+                        document.getElementById('score').textContent = gameScore;
+                        if(gameScore === 5) {
+                            setTimeout(() => showWinner(), 800);
+                        } else {
+                            document.getElementById('message').innerHTML = `🎁 Excellent! Found ${gameScore}/5 - Keep searching! ✨`;
+                        }
+                    } else {
+                        document.getElementById('message').innerHTML = '❌ Oops! Not golden. Try another! 🎁';
+                    }
+                });
+                grid.appendChild(box);
+            }
+        }
+
+        function showWinner() {
+            document.getElementById('message').innerHTML = '🎉 PERFECT! All 5 golden gifts found! ✨';
+            document.getElementById('winnerOverlay').classList.add('show');
+        }
+
+        function closeWinner() {
+            document.getElementById('winnerOverlay').classList.remove('show');
+            resetGame();
+        }
+
+        function resetGame() {
+            initGame();
+        }
+    </script>
+</body>
+</html>
